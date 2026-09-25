@@ -1,14 +1,118 @@
-body {                          /* [CSS] styles the whole page */
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+/* overall page background and font */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
   margin: 0;
-  padding: 20px;
+  padding: 40px 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
-h1 {                            /* [CSS] styles the big heading */
+/* the white card holding everything */
+.container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 30px 35px;
+  width: 100%;
+  max-width: 480px;
+}
+
+/* main heading */
+h1 {
   color: #2c3e50;
+  margin-bottom: 4px;
+  font-size: 28px;
 }
 
-p {                             /* [CSS] styles the description text */
-  color: #555;
+/* subtitle text under heading */
+.subtitle {
+  color: #888;
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+/* the form row */
+#expense-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* text and number input boxes */
+#expense-form input {
+  flex: 1;
+  min-width: 100px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#expense-form input:focus {
+  border-color: #74ebd5;
+}
+
+/* the Add Expense button */
+#expense-form button {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#expense-form button:hover {
+  background: #1a252f;
+}
+
+/* the running total */
+#total-display {
+  color: #27ae60;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+/* the expense list container */
+#expense-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* each individual expense item */
+#expense-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* the delete button on each item */
+#expense-list li button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#expense-list li button:hover {
+  background: #c0392b;
 }
