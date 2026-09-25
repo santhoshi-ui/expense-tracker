@@ -1,0 +1,14 @@
+body {                          /* [CSS] styles the whole page */
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {                            /* [CSS] styles the big heading */
+  color: #2c3e50;
+}
+
+p {                             /* [CSS] styles the description text */
+  color: #555;
+}

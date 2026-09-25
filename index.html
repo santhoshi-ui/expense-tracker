@@ -1,0 +1,21 @@
+<!DOCTYPE html>                                          <!-- [HTML] tells the browser "this is a modern webpage" -->
+<html>                                                    <!-- [HTML] the root of the whole page -->
+<head>                                                    <!-- [HTML] info about the page, not shown on screen -->
+  <title>Expense Tracker</title>                          <!-- [HTML] text shown in the browser tab -->
+  <link rel="stylesheet" href="style.css">                <!-- [HTML] connects our CSS file for styling -->
+</head>
+<body>                                                    <!-- [HTML] everything visible on the page starts here -->
+
+  <h1>Expense Tracker</h1>                                <!-- [HTML] big heading -->
+  <p>Track what you spend, one entry at a time.</p>       <!-- [HTML] a short description -->
+<form id="expense-form">                              <!-- [HTML] the input form -->
+    <input type="text" id="desc" placeholder="Description" required>
+    <input type="number" id="amount" placeholder="Amount" required>
+    <button type="submit">Add Expense</button>
+  </form>
+
+  <ul id="expense-list"></ul>                           <!-- [HTML] where expenses will show up -->
+
+  <script src="script.js"></script>                     <!-- [HTML] links our JavaScript file -->
+</body>
+</html>
