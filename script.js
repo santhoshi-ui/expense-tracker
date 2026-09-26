@@ -1,14 +1,13 @@
-// grab references to the form, inputs, and list from the HTML
+
 const form = document.getElementById("expense-form");
 const descInput = document.getElementById("desc");
 const amountInput = document.getElementById("amount");
 const expenseList = document.getElementById("expense-list");
 const totalDisplay = document.getElementById("total-display");
 
-// keep a running total of all expenses
+
 let total = 0;
 
-// updates the total text whenever expenses change
 function updateTotal() {
   totalDisplay.textContent = "Total: $" + total.toFixed(2);
 }

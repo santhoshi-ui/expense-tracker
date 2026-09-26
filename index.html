@@ -5,20 +5,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+
+  <main>
     <h1>Expense Tracker</h1>
-    <p class="subtitle">Track what you spend, one entry at a time.</p>
+    <p>Track what you spend, one entry at a time.</p>
 
-    <form id="expense-form">
-      <input type="text" id="desc" placeholder="Description" required>
-      <input type="number" id="amount" placeholder="Amount" required>
-      <button type="submit">Add Expense</button>
-    </form>
-
-    <h2 id="total-display"></h2>
+    <div class="input-area">
+      <input type="text" id="expense-name" placeholder="Expense name">
+      <input type="number" id="expense-amount" placeholder="Amount">
+      <button onclick="addExpense()">Add</button>
+    </div>
 
     <ul id="expense-list"></ul>
-  </div>
+
+    <h2>Total: ₹<span id="total">0</span></h2>
+  </main>
 
   <script src="script.js"></script>
 </body>
