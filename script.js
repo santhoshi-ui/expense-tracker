@@ -1,53 +1,24 @@
-
-const form = document.getElementById("expense-form");
-const descInput = document.getElementById("desc");
-const amountInput = document.getElementById("amount");
-const expenseList = document.getElementById("expense-list");
-const totalDisplay = document.getElementById("total-display");
-
-
 let total = 0;
 
-function updateTotal() {
-  totalDisplay.textContent = "Total: $" + total.toFixed(2);
-}
+function addExpense() {
+  const nameInput = document.getElementById("expense-name");
+  const amountInput = document.getElementById("expense-amount");
 
-// runs every time the form is submitted (button clicked)
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // stops the page from refreshing
+  const name = nameInput.value;
+  const amount = Number(amountInput.value);
 
-  const desc = descInput.value.trim();
-  const amount = parseFloat(amountInput.value);
-
-  if (desc === "" || isNaN(amount)) {
+  if (name === "" || amount === 0) {
     return;
   }
 
-  const li = document.createElement("li");
+  const list = document.getElementById("expense-list");
+  const item = document.createElement("li");
+  item.textContent = name + " - ₹" + amount;
+  list.appendChild(item);
 
-  const textSpan = document.createElement("span");
-  textSpan.textContent = desc + " - $" + amount.toFixed(2);
+  total = total + amount;
+  document.getElementById("total").textContent = total;
 
-  const deleteBtn = document.createElement("button");
-  deleteBtn.textContent = "Delete";
-
-  deleteBtn.addEventListener("click", function () {
-    li.remove();
-    total -= amount;
-    updateTotal();
-  });
-
-  li.appendChild(textSpan);
-  li.appendChild(deleteBtn);
-  expenseList.appendChild(li);
-
-  total += amount;
-  updateTotal();
-
-  descInput.value = "";
+  nameInput.value = "";
   amountInput.value = "";
-  descInput.focus();
-});
-
-// show "Total: $0.00" when the page first loads
-updateTotal();
+}
