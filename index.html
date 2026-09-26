@@ -8,17 +8,47 @@
 
   <main>
     <h1>Expense Tracker</h1>
-    <p>Track what you spend, one entry at a time.</p>
+    <p>Track your income, spending, and what's left.</p>
 
+    <div class="summary">
+      <div class="summary-box">
+        <p>Income</p>
+        <h2 id="total-income">₹0</h2>
+      </div>
+      <div class="summary-box">
+        <p>Spent</p>
+        <h2 id="total-expense">₹0</h2>
+      </div>
+      <div class="summary-box">
+        <p>Balance</p>
+        <h2 id="balance">₹0</h2>
+      </div>
+      <div class="summary-box warn">
+        <p>Unwanted Spending</p>
+        <h2 id="unwanted-total">₹0</h2>
+      </div>
+    </div>
+
+    <h3>Add Income</h3>
+    <div class="input-area">
+      <input type="text" id="income-name" placeholder="Source (e.g. Allowance)">
+      <input type="number" id="income-amount" placeholder="Amount">
+      <button onclick="addIncome()">Add Income</button>
+    </div>
+
+    <h3>Add Expense</h3>
     <div class="input-area">
       <input type="text" id="expense-name" placeholder="Expense name">
       <input type="number" id="expense-amount" placeholder="Amount">
-      <button onclick="addExpense()">Add</button>
+      <select id="expense-type">
+        <option value="need">Need</option>
+        <option value="want">Want (unwanted)</option>
+      </select>
+      <button onclick="addExpense()">Add Expense</button>
     </div>
 
-    <ul id="expense-list"></ul>
-
-    <h2>Total: ₹<span id="total">0</span></h2>
+    <h3>History</h3>
+    <ul id="transaction-list"></ul>
   </main>
 
   <script src="script.js"></script>

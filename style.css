@@ -1,118 +1,141 @@
-/* overall page background and font */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  background: linear-gradient(135deg, #fbeef0, #f5e6e8);
+  color: #2d2d2d;
   margin: 0;
-  padding: 40px 20px;
+  padding: 0;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
 }
 
-/* the white card holding everything */
-.container {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  padding: 30px 35px;
-  width: 100%;
-  max-width: 480px;
+main {
+  max-width: 560px;
+  margin: 50px auto;
+  padding: 0 20px;
 }
 
-/* main heading */
 h1 {
-  color: #2c3e50;
+  color: #800020;
+  font-size: 2.2em;
   margin-bottom: 4px;
-  font-size: 28px;
+  letter-spacing: -0.5px;
 }
 
-/* subtitle text under heading */
-.subtitle {
-  color: #888;
+main > p {
+  color: #6b6b6b;
   margin-top: 0;
-  margin-bottom: 24px;
-  font-size: 14px;
+  margin-bottom: 30px;
 }
 
-/* the form row */
-#expense-form {
+.summary {
   display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin: 20px 0 35px 0;
   flex-wrap: wrap;
 }
 
-/* text and number input boxes */
-#expense-form input {
+.summary-box {
+  background-color: white;
+  border-radius: 14px;
+  padding: 16px 14px;
+  flex: 1;
+  min-width: 110px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(128, 0, 32, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.summary-box:hover {
+  transform: translateY(-3px);
+}
+
+.summary-box p {
+  margin: 0;
+  font-size: 0.8em;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-box h2 {
+  margin: 6px 0 0 0;
+  font-size: 1.3em;
+  color: #800020;
+}
+
+.summary-box.warn h2 {
+  color: #e11d48;
+}
+
+h3 {
+  margin-top: 30px;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #a52a42;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin: 14px 0;
+  flex-wrap: wrap;
+}
+
+input, select {
   flex: 1;
   min-width: 100px;
-  padding: 10px 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 14px;
+  padding: 12px 14px;
+  border: 1px solid #ecd5d9;
+  border-radius: 10px;
+  font-size: 0.95em;
+  background-color: white;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s ease;
 }
 
-#expense-form input:focus {
-  border-color: #74ebd5;
+input:focus, select:focus {
+  border-color: #a52a42;
 }
 
-/* the Add Expense button */
-#expense-form button {
-  background: #2c3e50;
+button {
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #a52a42, #800020);
   color: white;
   border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-size: 14px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.2s;
+  font-size: 0.95em;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
 }
 
-#expense-form button:hover {
-  background: #1a252f;
+button:hover {
+  opacity: 0.88;
 }
 
-/* the running total */
-#total-display {
-  color: #27ae60;
-  font-size: 22px;
-  margin-bottom: 16px;
-}
-
-/* the expense list container */
-#expense-list {
+ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-/* each individual expense item */
-#expense-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #f8f9fa;
-  padding: 12px 14px;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #333;
+li {
+  background-color: white;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border-left: 4px solid #800020;
+  font-size: 0.95em;
 }
 
-/* the delete button on each item */
-#expense-list li button {
-  background: #e74c3c;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background 0.2s;
+.income-item {
+  border-left-color: #16a34a !important;
 }
 
-#expense-list li button:hover {
-  background: #c0392b;
+.expense-item {
+  border-left-color: #800020;
 }
